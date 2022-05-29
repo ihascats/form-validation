@@ -1,5 +1,10 @@
 import '../css/styles.css';
 import {
+  displayInvalid,
+  displayInvalidPassword,
+} from './validate.display-invalid';
+import displayValid from './validate.display-valid';
+import {
   validateEmail,
   validatePassword,
   validatePasswordConfirmation,
@@ -12,17 +17,47 @@ form.onsubmit = (event) => {
   event.preventDefault();
   const data = new FormData(form);
 
-  form.childNodes.forEach((element) => {
+  form.childNodes.forEach((domElement) => {
+    const element = domElement;
     if (element.nodeName === 'INPUT') {
       if (element.value === '') {
         element.classList.add('invalid');
+        element.nextElementSibling.style.visibility = 'visible';
       }
     }
   });
   const [email, , zip, password, passwordConfirmation] = data;
-  // EMAIL VALIDATION
-  validateEmail(email[1]);
-  validateZip(zip[1]);
-  validatePassword(password[1]);
-  validatePasswordConfirmation(password[1], passwordConfirmation[1]);
+  // VALIDATION
+  const emailInput = document.querySelector('#email');
+  const zipInput = document.querySelector('#zip');
+  const passwordInput = document.querySelector('#password');
+  const confirmationInput = document.querySelector('#confirmPassword');
+  if (!validateEmail(email[1])) {
+    displayInvalid(emailInput);
+  } else {
+    displayValid(emailInput);
+  }
+
+  console.log(password[1], passwordConfirmation[1]);
+  if (!validateZip(zip[1])) {
+    displayInvalid(zipInput);
+  } else {
+    displayValid(zipInput);
+  }
+  if (!validatePassword(password[1])) {
+    displayInvalid(passwordInput);
+    passwordInput.nextElementSibling.textContent = displayInvalidPassword(
+      // eslint-disable-next-line comma-dangle
+      password[1]
+    );
+  } else {
+    displayValid(passwordInput);
+    passwordInput.nextElementSibling.textContent =
+      '1 UPPERCASE LETTER, 1 LOWERCASE LETTER, 1 SPECIAL CHARACTER, 1 NUMBER, MINIMUM 8 CHARACTERS & MAXIMUM 30 CHARACTERS*';
+  }
+  if (!validatePasswordConfirmation(password[1], passwordConfirmation[1])) {
+    displayInvalid(confirmationInput);
+  } else {
+    displayValid(confirmationInput);
+  }
 };

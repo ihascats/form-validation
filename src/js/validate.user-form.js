@@ -15,7 +15,7 @@ function validateZip(userZip) {
 function validatePassword(userPassword) {
   // eslint-disable-next-line operator-linebreak
   const regex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
+    /^.*(?=.{8,20})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&!-_]).*$/;
 
   return regex.test(String(userPassword));
 }
