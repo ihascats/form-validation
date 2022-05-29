@@ -11,10 +11,6 @@ const form = document.querySelector('form');
 form.onsubmit = (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  console.log(data);
-  data.forEach((value, name) => {
-    console.log(`${name} : ${value}`);
-  });
 
   form.childNodes.forEach((element) => {
     if (element.nodeName === 'INPUT') {
