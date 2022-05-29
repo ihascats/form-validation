@@ -19,6 +19,9 @@ function displayInvalidPassword(userPassword) {
   if (password === password.toUpperCase()) {
     errorMessage.push('1 LOWERCASE LETTER');
   }
+  if (!/\d/.test(password)) {
+    errorMessage.push('1 NUMBER');
+  }
   if (!specialRegex.test(password)) {
     errorMessage.push('1 SPECIAL CHARACTER');
   }

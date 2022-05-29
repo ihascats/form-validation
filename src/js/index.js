@@ -52,8 +52,6 @@ form.onsubmit = (event) => {
     );
   } else {
     displayValid(passwordInput);
-    passwordInput.nextElementSibling.textContent =
-      '1 UPPERCASE LETTER, 1 LOWERCASE LETTER, 1 SPECIAL CHARACTER, 1 NUMBER, MINIMUM 8 CHARACTERS & MAXIMUM 30 CHARACTERS*';
   }
   if (!validatePasswordConfirmation(password[1], passwordConfirmation[1])) {
     displayInvalid(confirmationInput);

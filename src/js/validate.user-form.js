@@ -21,6 +21,9 @@ function validatePassword(userPassword) {
 }
 
 function validatePasswordConfirmation(userPassword, userConfirmation) {
+  if (!validatePassword(userPassword)) {
+    return false;
+  }
   return userPassword === userConfirmation;
 }
 
