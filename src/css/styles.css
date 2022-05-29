@@ -12,36 +12,35 @@
   width: 100vw;
   justify-content: center;
   align-items: center;
-  background-color: rgb(149, 204, 193);
+  background-color: #95ccc1;
   grid-template-rows: 1fr auto;
   justify-items: center;
 }
 
 form {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(60vw, 1fr));
 }
 
 label {
   letter-spacing: 2px;
   font-weight: 900;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 input,
 select {
-  margin-bottom: 8px;
   padding: 4px;
   border: none;
   border-radius: 2px;
   background-color: rgba(0, 0, 0, 0.288);
-  font-size: 16px;
+  font-size: 19px;
 }
 
 footer {
   letter-spacing: 2px;
   font-weight: 900;
-  font-size: 13px;
+  font-size: 16px;
   padding: 16px;
   color: rgb(12, 12, 12);
 }
@@ -57,12 +56,32 @@ input[type='submit'] {
 
 input[type='submit']:hover {
   background-color: rgba(0, 0, 0, 0.582);
-  font-size: 12px;
+  font-size: 15px;
   padding: 7px;
 }
 
 input[type='submit']:active {
   background-color: rgba(0, 0, 0, 0.137);
   padding: 7px;
-  font-size: 11px;
+  font-size: 14px;
+}
+
+.invalid {
+  border: #f50076 solid 2px;
+  padding: 2px;
+}
+
+.valid {
+  border: #f5e036 solid 2px;
+  padding: 2px;
+}
+select {
+  margin-bottom: 20px;
+}
+
+form > p {
+  margin-bottom: 8px;
+  color: #f50076;
+  font-size: 14px;
+  visibility: hidden;
 }

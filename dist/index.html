@@ -18,6 +18,7 @@
       <form action="" method="post">
         <label for="email">EMAIL</label>
         <input type="email" name="email" id="email" />
+        <p>PLEASE INPUT A VALID EMAIL ADDRESS*</p>
         <label for="country">COUNTRY</label>
         <select id="country" name="country">
           <option value="Afghanistan">Afghanistan</option>
@@ -290,7 +291,9 @@
           <option value="Ukraine">Ukraine</option>
           <option value="United Arab Emirates">United Arab Emirates</option>
           <option value="United Kingdom">United Kingdom</option>
-          <option value="United States">United States</option>
+          <option selected="selected" value="United States">
+            United States
+          </option>
           <option value="United States Minor Outlying Islands">
             United States Minor Outlying Islands
           </option>
@@ -309,13 +312,21 @@
           <option value="Zambia">Zambia</option>
           <option value="Zimbabwe">Zimbabwe</option>
         </select>
-        <label for="zip">ZIP Code</label>
+        <label for="zip">ZIP CODE</label>
         <input type="text" name="zip" id="zip" />
+        <p>PLEASE INPUT A VALID ZIP CODE (5 numbers long)*</p>
 
         <label for="password">PASSWORD</label>
         <input type="password" name="password" id="password" />
+        <p>
+          1 UPPERCASE LETTER, 1 LOWERCASE LETTER, 1 SPECIAL CHARACTER, 1 NUMBER,
+          MINIMUM 8 CHARACTERS & MAXIMUM 30 CHARACTERS
+        </p>
+
         <label for="password">CONFIRM PASSWORD</label>
         <input type="password" name="confirmPassword" id="confirmPassword" />
+        <p>PASSWORDS DON'T MATCH*</p>
+
         <input type="submit" value="SUBMIT" />
       </form>
       <footer>
