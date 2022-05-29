@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Ubuntu', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+}
+
+.wrapper {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(149, 204, 193);
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+label {
+  letter-spacing: 2px;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+input,
+select {
+  margin-bottom: 8px;
+  padding: 4px;
+  border: none;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.288);
+  font-size: 16px;
+}
+
+footer {
+  letter-spacing: 2px;
+  font-weight: 900;
+  font-size: 13px;
+  padding: 16px;
+  color: rgb(12, 12, 12);
+}
+
+footer > a {
+  color: rgb(12, 12, 12);
+}
+
+input[type='submit'] {
+  width: 50%;
+  margin: 42px auto 0;
+}
+
+input[type='submit']:hover {
+  background-color: rgba(0, 0, 0, 0.582);
+  font-size: 12px;
+  padding: 7px;
+}
+
+input[type='submit']:active {
+  background-color: rgba(0, 0, 0, 0.137);
+  padding: 7px;
+  font-size: 11px;
+}
